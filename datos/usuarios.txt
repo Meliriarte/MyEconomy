@@ -1,0 +1,2 @@
+Juan,Perez,01/01/1990,juan123,contraseña1
+Maria,Gomez,15/05/1985,maria456,contraseña2
