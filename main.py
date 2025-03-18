@@ -36,12 +36,51 @@ class MyEconomyApp(tk.Tk):
         self.after(3000, self.mostrar_ventana_principal)
 
     def mostrar_ventana_principal(self):
-        # Ocultar la pantalla de inicio
-        self.frame_inicio.pack_forget()
+        # Ocultar la pantalla de inicio con un efecto de fade-out
+        self.fade_out(self.frame_inicio, self.frame_inicio, self.ventana_principal_fade_in)
 
-        # Mostrar la ventana principal
+    def ventana_principal_fade_in(self):
+        # Mostrar la ventana principal con un efecto de fade-in
         self.ventana_principal = VentanaPrincipal(self)
         self.ventana_principal.pack(fill="both", expand=True)
+        self.fade_in(self.ventana_principal)
+
+    def mostrar_registro_fade_in(self):
+        # Mostrar la ventana de registro con un efecto de fade-in
+        from vistas.ventana_registro import RegistroFrame
+        self.ventana_registro = RegistroFrame(self, self.ventana_principal.entrada_usuario, self.ventana_principal.entrada_contraseña)
+        self.ventana_registro.pack(fill="both", expand=True)
+        self.fade_in(self.ventana_registro)
+
+    def mostrar_login_fade_in(self):
+        # Mostrar la ventana de login con un efecto de fade-in
+        self.ventana_principal.pack(fill="both", expand=True)
+        self.fade_in(self.ventana_principal)
+
+    def fade_out(self, widget, frame_to_hide, callback):
+        """Efecto de fade-out (desvanecimiento)."""
+        alpha = widget.winfo_toplevel().attributes("-alpha")
+        if alpha > 0:
+            alpha -= 0.05  # Reducir la transparencia
+            widget.winfo_toplevel().attributes("-alpha", alpha)
+            self.after(50, self.fade_out, widget, frame_to_hide, callback)
+        else:
+            frame_to_hide.pack_forget()
+            callback()
+
+    def fade_in(self, widget):
+        """Efecto de fade-in (aparición gradual)."""
+        alpha = 0
+        widget.winfo_toplevel().attributes("-alpha", alpha)
+        widget.pack(fill="both", expand=True)
+        self.fade_in_step(widget, alpha)
+
+    def fade_in_step(self, widget, alpha):
+        """Paso intermedio para el efecto de fade-in."""
+        if alpha < 1:
+            alpha += 0.05  # Aumentar la transparencia
+            widget.winfo_toplevel().attributes("-alpha", alpha)
+            self.after(50, self.fade_in_step, widget, alpha)
 
 if __name__ == "__main__":
     app = MyEconomyApp()
