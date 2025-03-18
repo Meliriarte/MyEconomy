@@ -9,6 +9,9 @@ class MyEconomyApp(tk.Tk):
         self.geometry("500x500")
         self.configure(bg="#000000")  # Fondo negro
 
+        # Fuente Sans Serif
+        self.fuente = ("Sans Serif", 12)
+
         # Centrar la ventana en la pantalla
         self.update_idletasks()
         ancho = self.winfo_width()
