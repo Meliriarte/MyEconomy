@@ -37,7 +37,7 @@ class MyEconomyApp(tk.Tk):
 
         # Cargar la imagen personalizada
         try:
-            imagen_personalizada = Image.open("datos/imagenes/fondo_login.png")  # Ruta de tu imagen
+            imagen_personalizada = Image.open("datos/imagenes/fondo1.png")  # Ruta de tu imagen
             imagen_personalizada = imagen_personalizada.resize((300, 300), Image.Resampling.LANCZOS)  # Redimensionar la imagen
             self.imagen_personalizada = ImageTk.PhotoImage(imagen_personalizada)
             etiqueta_imagen = tk.Label(self.frame_inicio, image=self.imagen_personalizada, bg="#000000")
