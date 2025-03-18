@@ -50,7 +50,7 @@ class RegistroFrame(tk.Frame):
         self.entrada_apellido.grid(row=1, column=1, pady=5, sticky="w")
 
         # Campo de fecha de nacimiento
-        etiqueta_fecha_nacimiento = tk.Label(sub_frame, text="Fecha de Nacimiento (DD/MM/AAAA):", bg="#000000", fg="#FFFFFF", font=self.fuente)
+        etiqueta_fecha_nacimiento = tk.Label(sub_frame, text="Fecha de Nacimiento:", bg="#000000", fg="#FFFFFF", font=self.fuente)
         etiqueta_fecha_nacimiento.grid(row=2, column=0, pady=5, sticky="e")
         self.entrada_fecha_nacimiento = tk.Entry(sub_frame, bg="#F0F0F0", fg="#000000", font=self.fuente)
         self.entrada_fecha_nacimiento.grid(row=2, column=1, pady=5, sticky="w")
