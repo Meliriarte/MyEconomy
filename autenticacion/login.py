@@ -4,13 +4,14 @@ def login(usuario, contraseña):
         with open("datos/usuarios.txt", "r") as archivo:
             for linea in archivo:
                 datos = linea.strip().split(",")
-                if len(datos) >= 5:  # Asegurarnos de que la línea tenga todos los campos
-                    usuario_guardado = datos[3]  # El usuario está en la posición 3
-                    contraseña_guardada = datos[4]  # La contraseña está en la posición 4
+                if len(datos) >= 6:  # Asegurarnos de que la línea tenga todos los campos
+                    usuario_guardado = datos[4]  # El usuario está ahora en la posición 4
+                    contraseña_guardada = datos[5]  # La contraseña está ahora en la posición 5
+                    id_usuario = datos[0]  # El ID está en la posición 0
 
                     if usuario == usuario_guardado:
                         if contraseña == contraseña_guardada:
-                            return True, "Inicio de sesión exitoso"  # Usuario y contraseña correctos
+                            return True, f"Inicio de sesión exitoso. ID: {id_usuario}"  # Usuario y contraseña correctos
                         else:
                             return False, "Contraseña incorrecta"  # Usuario existe, pero contraseña incorrecta
             return False, "Usuario no encontrado"  # Usuario no existe

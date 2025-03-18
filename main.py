@@ -85,3 +85,4 @@ class MyEconomyApp(tk.Tk):
 if __name__ == "__main__":
     app = MyEconomyApp()
     app.mainloop()
+    

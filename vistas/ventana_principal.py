@@ -31,23 +31,23 @@ class VentanaPrincipal(tk.Frame):
         sub_frame.grid_columnconfigure(1, weight=1)
 
         # Campo de usuario
-        etiqueta_usuario = tk.Label(sub_frame, text="Usuario:", bg="#000000", fg="#FFFFFF", font=("Rusilla Serif", 12))
+        etiqueta_usuario = tk.Label(sub_frame, text="Usuario:", bg="#000000", fg="#FFFFFF", font=("Sanseriffic", 12))
         etiqueta_usuario.grid(row=0, column=0, pady=5, sticky="e")
-        self.entrada_usuario = tk.Entry(sub_frame, bg="#F0F0F0", fg="#000000", font=("Rusilla Serif", 12))
+        self.entrada_usuario = tk.Entry(sub_frame, bg="#F0F0F0", fg="#000000", font=("Sanseriffic", 12))
         self.entrada_usuario.grid(row=0, column=1, pady=5, sticky="w")
 
         # Campo de contraseña
-        etiqueta_contraseña = tk.Label(sub_frame, text="Contraseña:", bg="#000000", fg="#FFFFFF", font=("Rusilla Serif", 12))
+        etiqueta_contraseña = tk.Label(sub_frame, text="Contraseña:", bg="#000000", fg="#FFFFFF", font=("Sanseriffic", 12))
         etiqueta_contraseña.grid(row=1, column=0, pady=5, sticky="e")
-        self.entrada_contraseña = tk.Entry(sub_frame, show="*", bg="#F0F0F0", fg="#000000", font=("Rusilla Serif", 12))
+        self.entrada_contraseña = tk.Entry(sub_frame, show="*", bg="#F0F0F0", fg="#000000", font=("Sanseriffic", 12))
         self.entrada_contraseña.grid(row=1, column=1, pady=5, sticky="w")
 
         # Botón de login
-        boton_login = tk.Button(sub_frame, text="Iniciar Sesión", command=self.al_iniciar_sesion, bg="#32CD32", fg="#FFFFFF", font=("Rusilla Serif", 12))
+        boton_login = tk.Button(sub_frame, text="Iniciar Sesión", command=self.al_iniciar_sesion, bg="#32CD32", fg="#FFFFFF", font=("Sanseriffic", 12))
         boton_login.grid(row=2, column=0, columnspan=2, pady=10)
 
         # Botón de registro
-        boton_registro = tk.Button(sub_frame, text="Registrarse", command=self.mostrar_registro, bg="#32CD32", fg="#FFFFFF", font=("Rusilla Serif", 12))
+        boton_registro = tk.Button(sub_frame, text="Registrarse", command=self.mostrar_registro, bg="#32CD32", fg="#FFFFFF", font=("Sanseriffic", 12))
         boton_registro.grid(row=3, column=0, columnspan=2, pady=10)
 
     def al_iniciar_sesion(self):
