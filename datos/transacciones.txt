@@ -1,0 +1,20 @@
+JU001,ingreso,Inversiones,2404,2025-03-09 11:19:15
+JU001,egreso,Supermercado,548,2025-02-25 11:19:15
+JU001,egreso,Educación,614,2025-02-27 11:19:15
+JU001,ingreso,Reembolso,2276,2025-03-21 11:19:15
+JU001,ingreso,Freelance,2811,2025-03-25 11:19:15
+JU001,egreso,Supermercado,412,2025-03-16 11:19:15
+JU001,ingreso,Reembolso,2601,2025-03-15 11:19:15
+JU001,ingreso,Salario mensual,4924,2025-03-16 11:19:15
+JU001,egreso,Supermercado,349,2025-03-15 11:19:15
+JU001,egreso,Servicios,671,2025-03-01 11:19:15
+JU001,ingreso,Reembolso,2210,2025-03-15 11:19:15
+JU001,egreso,Servicios,418,2025-03-06 11:19:15
+JU001,ingreso,Reembolso,3665,2025-03-01 11:19:15
+JU001,egreso,Electrónicos,438,2025-03-18 11:19:15
+JU001,ingreso,Venta de artículos,2890,2025-02-23 11:19:15
+JU001,ingreso,Venta de artículos,2324,2025-03-07 11:19:15
+JU001,egreso,Supermercado,709,2025-03-01 11:19:15
+JU001,egreso,Electrónicos,569,2025-03-06 11:19:15
+JU001,egreso,Transporte,903,2025-03-20 11:19:15
+JU001,ingreso,Reembolso,3929,2025-03-05 11:19:15

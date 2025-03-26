@@ -1,0 +1,3 @@
+JU001,**** **** **** 0001,Banco Continental,11608,28
+JU001,**** **** **** 0002,Banco de Crédito,12173,10
+JU001,**** **** **** 0003,Banco Continental,16125,23
