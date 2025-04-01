@@ -5,9 +5,9 @@
 
 # **Descripción del Proyecto**  
 MyEconomy es una aplicación de escritorio desarrollada en Python con Tkinter que permite:  
- Registrar y clasificar **transacciones financieras** (ingresos/egresos)  
- Gestionar **tarjetas de crédito** (límites, fechas de corte)  
- Generar **reportes mensuales** para análisis financiero  
+-Registrar y clasificar transacciones financieras (ingresos/egresos). <br>
+-Gestionar tarjetas de crédito (límites, fechas de corte). <br>
+-Generar reportes mensuales para análisis financiero.
 
 ---
 
@@ -17,108 +17,161 @@ Desarrollar una aplicación de escritorio para gestión financiera personal que 
 ---
 
 # **Problemática que resuelve:**  
--Falta de herramientas accesibles para el control financiero personal.
--Dificultad para visualizar el balance entre ingresos y gastos.
--Desorganización en el manejo de tarjetas de crédito y fechas de corte.
+-Falta de herramientas accesibles para el control financiero personal. <br>
+-Dificultad para visualizar el balance entre ingresos y gastos. <br>
+-Desorganización en el manejo de tarjetas de crédito y fechas de corte. <br>
 
 ---
 
 # **Alcance**  
 
--Registro de usuarios con autenticación básica.
--Gestión de transacciones (ingresos/egresos).
--Administración de tarjetas de crédito (límites, fechas de corte).
--Generación de reportes financieros mensuales.
+-Registro de usuarios con autenticación básica. <br>
+-Gestión de transacciones (ingresos/egresos). <br>
+-Administración de tarjetas de crédito (límites, fechas de corte). <br>
+-Generación de reportes financieros mensuales. <br>
 
 ---
 
 # **Estructura del proyecto**
 
-**Arquitectura**
--Frontend: Interfaz gráfica con Tkinter.
--Backend: Lógica de negocio en Python.
--Almacenamiento: Archivos de texto (usuarios.txt, transacciones.txt, tarjetas.txt).
+**Arquitectura** <br>
+-Frontend: Interfaz gráfica con Tkinter. <br>
+-Backend: Lógica de negocio en Python. <br>
+-Almacenamiento: Archivos de texto (usuarios.txt, transacciones.txt, tarjetas.txt). <br>
 
 ---
 
 # **Estructura de Archivos**  
 
-# **1. usuarios.txt**  
+## **1. usuarios.txt**  
 ```plaintext
-id;nombre;apellido;fecha_nacimiento;usuario;contraseña
-
-JU001;Juan;Pérez;1990-05-15;juanp;juan123
+id,nombre,apellido,fecha_nacimiento,usuario,contraseña
+JU001,Juan,Pérez,1990-05-15,juanp,juan123
 ```
 
-# **2. transacciones.txt**  
+## **2. transacciones.txt**  
 ```plaintext
-id_usuario;tipo(ingreso/egreso);descripción;monto;fecha
-
-JU001;egreso;Supermercado;350000;2024-09-16
+id_usuario,tipo,descripcion,monto,fecha
+JU001,egreso,Supermercado,350000,2024-03-16 14:30:45
 ```
 
-# **3. tarjetas.txt**  
+## **3. tarjetas.txt**  
 ```plaintext
-id_usuario;número_tarjeta;banco;límite;fecha_corte
-
-JU001;**** **** **** 1234;Bancolombia;5000000;25
+id_usuario,numero_tarjeta,banco,limite,fecha_corte
+JU001,**** **** **** 1234,Bancolombia,5000000,25
 ```
+
+---
+
+# **Estructura de Interfaz**
+
+## **1. PantallaInicio** <br>
+-Logo de la aplicación <br>
+-Transición automática (3 segundos) <br>
+
+## **2. VentanaInicio** <br>
+-Formulario de login <br>
+-Botón de registro <br>
+
+## **3. VentanaPrincipal** <br>
+**Menú Lateral:** <br>
+-Saludo personalizado <br>
+-Opciones de navegación <br>
+
+**Área de Contenido:** <br>
+-Vista de bienvenida con tarjetas <br>
+-Secciones para ingresos/egresos <br>
+-Gestión de tarjetas <br>
+
+---
+
+# **Diseño Visual**
+
+## **Paleta de Colores** <br>
+-Fondo principal: **#333333** <br>
+-Elementos positivos: **#4CAF50** <br>
+-Elementos negativos: **#E74C3C** <br>
+-Texto claro: **#FFFFFF** <br>
+-Botones de acción: **#4CAF50** <br>
+-Botón cerrar sesión: **#E74C3C** <br>
 
 ---
 
 # **Funcionalidades claves**  
 
-# **Registro y Autenticación**
+## **Registro y Autenticación** <br>
+-Los usuarios se registran con nombre, apellido, fecha de nacimiento, usuario y contraseña. <br>
+-Inicio de sesión con credenciales almacenadas en usuarios.txt. <br>
 
--Los usuarios se registran con nombre, apellido, fecha de nacimiento, usuario y contraseña.
--Inicio de sesión con credenciales almacenadas en usuarios.txt.
+## **Gestión de Transacciones** <br>
+-Ingresos: Salarios, bonos, etc. <br>
+-Egresos: Gastos fijos/variables (alimentos, servicios). <br>
+-Visualización: Historial filtrado por tipo y fecha. <br>
 
-# **Gestión de Transacciones**
+## **Tarjetas de Crédito** <br>
+-Registro de tarjetas con detalles de banco, límite y fecha de corte. <br>
+-Visualización en formato seguro (**** **** **** 1234). <br>
 
--Ingresos: Salarios, bonos, etc.
--Egresos: Gastos fijos/variables (alimentos, servicios).
--Visualización: Historial filtrado por tipo y fecha.
+## **Reportes Financieros** <br>
+-Balance mensual (Total ingresos - Total egresos). <br>
+-Alertas si los egresos superan el 70% de los ingresos. <br>
 
-# **Tarjetas de Crédito**
+---
 
--Registro de tarjetas con detalles de banco, límite y fecha de corte.
--Visualización en formato seguro (**** **** **** 1234).
+# **Validaciones y Control de Errores**
 
-# **Reportes Financieros**
--Balance mensual (Total ingresos - Total egresos).
--Alertas si los egresos superan el 70% de los ingresos.
+## **Validaciones Implementadas** <br>
+-Campos obligatorios en formularios <br>
+-Montos numéricos válidos <br>
+-Fechas en formato correcto <br>
+-Límites de tarjetas positivos <br>
+-Credenciales de usuario únicas <br>
+
+## **Control de Errores** <br>
+-Archivos no encontrados <br>
+-Errores de formato en datos <br>
+-Fallos en registro/login <br>
+-Problemas de permisos en archivos <br>
 
 ---
 
 # **Alertas Financieras**  
-Notificación automática cuando:  
-- Los egresos superan el 70% de los ingresos
-- Hay tarjetas próximas a su fecha de corte
+**Notificación automática cuando:** <br>
+-Los egresos superan el 70% de los ingresos. <br>
+-Hay tarjetas próximas a su fecha de corte. <br>
+
+---
+
+# **Requisitos Técnicos**
+-Python 3.x <br>
+-Tkinter (incluido en Python) <br>
+-Pillow (para manejo de imágenes) <br>
+-Sistema de archivos con permisos de escritura <br>
+
+---
+
+# **Limitaciones Actuales**
+-Almacenamiento en archivos planos <br>
+-Sin encriptación de contraseñas <br>
+-Sin respaldo automático de datos <br>
+-Reportes básicos sin gráficas <br>
+
+---
+
+# **Mejoras Futuras**
+-Migración a SQLite <br>
+-Encriptación de datos sensibles <br>
+-Gráficos estadísticos <br>
+-Exportación de reportes a PDF <br>
+-Categorización de gastos <br>
+-Presupuestos por categoría <br>
 
 ---
 
 # **Justificación**
 
--Impacto Social: Empodera a los usuarios con control financiero claro y accesible.
--Tecnología: Uso de Python/Tkinter para rápida implementación y bajo costo.
--Escalabilidad: Futura integración con bases de datos (SQLite) y análisis avanzado.
+-Impacto Social: Empodera a los usuarios con control financiero claro y accesible. <br>
+-Tecnología: Uso de Python/Tkinter para rápida implementación y bajo costo. <br>
+-Escalabilidad: Futura integración con bases de datos (SQLite) y análisis avanzado. <br>
 
 ---
-
-## **📖 Manual de Usuario**  
-
-### **1. Primeros Pasos**  
-1. **Registro**: Completa el formulario inicial  
-2. **Login**: Ingresa con tus credenciales  
-
-### **2. Transacciones**  
-| **Paso** | **Acción**                          | **Ejemplo**              |
-|----------|------------------------------------|--------------------------|
-| 1        | Seleccionar "Ingresos/Egresos"     | Click en botón           |
-| 2        | Completar formulario               | Descripción: "Salario"   |
-| 3        | Confirmar                          | Click en "Registrar"     |
-
-### **3. Tarjetas**  
-📌 **Importante**:  
-- Usar formato válido para fechas de corte (1-31)  
-- Los límites deben ser valores numéricos  
