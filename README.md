@@ -1,47 +1,47 @@
 # **MyEconomy App**  
-**Plataforma de Gestión Financiera Personal**  
+**Tu Compañero de Finanzas Personales**  
 
 ---
 
-# **Descripción del Proyecto**  
-MyEconomy es una aplicación de escritorio desarrollada en Python con Tkinter que permite:  
--Registrar y clasificar transacciones financieras (ingresos/egresos). <br>
--Gestionar tarjetas de crédito (límites, fechas de corte). <br>
--Generar reportes mensuales para análisis financiero.
+# **¿De qué se trata este proyecto?**  
+MyEconomy es una aplicación de escritorio hecha en Python con Tkinter. ¿Qué puedes hacer con ella? Bueno, básicamente te ayuda a:  
+- Llevar un registro de tus ingresos y gastos.  
+- Gestionar tus tarjetas de crédito, incluyendo límites y fechas de corte.  
+- Generar reportes mensuales para que puedas analizar tus finanzas.
 
 ---
 
-**Objetivo Principal:**  
-Desarrollar una aplicación de escritorio para gestión financiera personal que permita a los usuarios registrar ingresos, egresos, tarjetas de crédito y generar reportes mensuales para evaluar su salud financiera.
+**¿Cuál es el objetivo?**  
+Queremos que tengas una herramienta sencilla para gestionar tus finanzas personales. Con MyEconomy, puedes registrar tus ingresos, gastos, tarjetas de crédito y obtener reportes mensuales para ver cómo va tu salud financiera.
 
 ---
 
-# **Problemática que resuelve:**  
--Falta de herramientas accesibles para el control financiero personal. <br>
--Dificultad para visualizar el balance entre ingresos y gastos. <br>
--Desorganización en el manejo de tarjetas de crédito y fechas de corte. <br>
+# **¿Qué problemas resuelve?**  
+- No más excusas para no llevar un control financiero.  
+- Te ayuda a ver claramente el balance entre lo que ganas y lo que gastas.  
+- Organiza tus tarjetas de crédito y sus fechas de corte para que no te sorprendan.
 
 ---
 
-# **Alcance**  
+# **¿Qué puedes hacer con MyEconomy?**  
 
--Registro de usuarios con autenticación básica. <br>
--Gestión de transacciones (ingresos/egresos). <br>
--Administración de tarjetas de crédito (límites, fechas de corte). <br>
--Generación de reportes financieros mensuales. <br>
-
----
-
-# **Estructura del proyecto**
-
-**Arquitectura** <br>
--Frontend: Interfaz gráfica con Tkinter. <br>
--Backend: Lógica de negocio en Python. <br>
--Almacenamiento: Archivos de texto (usuarios.txt, transacciones.txt, tarjetas.txt). <br>
+- Registrarte y autenticarte de manera sencilla.  
+- Gestionar tus transacciones, ya sean ingresos o egresos.  
+- Administrar tus tarjetas de crédito, incluyendo límites y fechas de corte.  
+- Generar reportes financieros mensuales para tener todo bajo control.
 
 ---
 
-# **Estructura de Archivos**  
+# **¿Cómo está estructurado el proyecto?**
+
+**Arquitectura**  
+- **Frontend:** Interfaz gráfica con Tkinter.  
+- **Backend:** Lógica de negocio en Python.  
+- **Almacenamiento:** Archivos de texto (usuarios.txt, transacciones.txt, tarjetas.txt).  
+
+---
+
+# **¿Cómo se organizan los archivos?**  
 
 ## **1. usuarios.txt**  
 ```plaintext
@@ -63,115 +63,115 @@ JU001,**** **** **** 1234,Bancolombia,5000000,25
 
 ---
 
-# **Estructura de Interfaz**
+# **¿Cómo es la interfaz?**
 
-## **1. PantallaInicio** <br>
--Logo de la aplicación <br>
--Transición automática (3 segundos) <br>
+## **1. PantallaInicio**  
+- Muestra el logo de la app.  
+- Cambia automáticamente después de 3 segundos.  
 
-## **2. VentanaInicio** <br>
--Formulario de login <br>
--Botón de registro <br>
+## **2. VentanaInicio**  
+- Aquí inicias sesión.  
+- También puedes registrarte si eres nuevo.  
 
-## **3. VentanaPrincipal** <br>
-**Menú Lateral:** <br>
--Saludo personalizado <br>
--Opciones de navegación <br>
+## **3. VentanaPrincipal**  
+**Menú Lateral:**  
+- Te saluda por tu nombre.  
+- Te da opciones para navegar.  
 
-**Área de Contenido:** <br>
--Vista de bienvenida con tarjetas <br>
--Secciones para ingresos/egresos <br>
--Gestión de tarjetas <br>
+**Área de Contenido:**  
+- Te da la bienvenida con tus tarjetas.  
+- Puedes ver y gestionar tus ingresos y egresos.  
+- También puedes gestionar tus tarjetas.  
 
 ---
 
 # **Diseño Visual**
 
-## **Paleta de Colores** <br>
--Fondo principal: **#333333** <br>
--Elementos positivos: **#4CAF50** <br>
--Elementos negativos: **#E74C3C** <br>
--Texto claro: **#FFFFFF** <br>
--Botones de acción: **#4CAF50** <br>
--Botón cerrar sesión: **#E74C3C** <br>
+## **Paleta de Colores**  
+- **Fondo principal:** #333333  
+- **Elementos positivos:** #4CAF50  
+- **Elementos negativos:** #E74C3C  
+- **Texto claro:** #FFFFFF  
+- **Botones de acción:** #4CAF50  
+- **Botón cerrar sesión:** #E74C3C  
 
 ---
 
-# **Funcionalidades claves**  
+# **¿Qué puedes hacer con MyEconomy?**  
 
-## **Registro y Autenticación** <br>
--Los usuarios se registran con nombre, apellido, fecha de nacimiento, usuario y contraseña. <br>
--Inicio de sesión con credenciales almacenadas en usuarios.txt. <br>
+## **Registro y Autenticación**  
+- Regístrate con tus datos básicos.  
+- Inicia sesión con tus credenciales.  
 
-## **Gestión de Transacciones** <br>
--Ingresos: Salarios, bonos, etc. <br>
--Egresos: Gastos fijos/variables (alimentos, servicios). <br>
--Visualización: Historial filtrado por tipo y fecha. <br>
+## **Gestión de Transacciones**  
+- Registra tus ingresos como salarios o bonos.  
+- Registra tus gastos, ya sean fijos o variables.  
+- Filtra y visualiza tu historial por tipo y fecha.  
 
-## **Tarjetas de Crédito** <br>
--Registro de tarjetas con detalles de banco, límite y fecha de corte. <br>
--Visualización en formato seguro (**** **** **** 1234). <br>
+## **Tarjetas de Crédito**  
+- Registra tus tarjetas con detalles importantes.  
+- Visualiza tus tarjetas de manera segura.  
 
-## **Reportes Financieros** <br>
--Balance mensual (Total ingresos - Total egresos). <br>
--Alertas si los egresos superan el 70% de los ingresos. <br>
+## **Reportes Financieros**  
+- Obtén un balance mensual de tus finanzas.  
+- Recibe alertas si tus gastos superan el 70% de tus ingresos.  
 
 ---
 
 # **Validaciones y Control de Errores**
 
-## **Validaciones Implementadas** <br>
--Campos obligatorios en formularios <br>
--Montos numéricos válidos <br>
--Fechas en formato correcto <br>
--Límites de tarjetas positivos <br>
--Credenciales de usuario únicas <br>
+## **Validaciones Implementadas**  
+- Asegúrate de llenar todos los campos obligatorios.  
+- Verifica que los montos sean números válidos.  
+- Asegúrate de que las fechas estén en el formato correcto.  
+- Los límites de las tarjetas deben ser positivos.  
+- Cada usuario debe tener credenciales únicas.  
 
-## **Control de Errores** <br>
--Archivos no encontrados <br>
--Errores de formato en datos <br>
--Fallos en registro/login <br>
--Problemas de permisos en archivos <br>
+## **Control de Errores**  
+- Maneja archivos que no se encuentran.  
+- Corrige errores de formato en los datos.  
+- Soluciona fallos en el registro o inicio de sesión.  
+- Asegúrate de tener permisos adecuados para los archivos.  
 
 ---
 
 # **Alertas Financieras**  
-**Notificación automática cuando:** <br>
--Los egresos superan el 70% de los ingresos. <br>
--Hay tarjetas próximas a su fecha de corte. <br>
+**Recibe notificaciones cuando:**  
+- Tus gastos superan el 70% de tus ingresos.  
+- Tus tarjetas están cerca de su fecha de corte.  
 
 ---
 
 # **Requisitos Técnicos**
--Python 3.x <br>
--Tkinter (incluido en Python) <br>
--Pillow (para manejo de imágenes) <br>
--Sistema de archivos con permisos de escritura <br>
+- Python 3.x  
+- Tkinter (incluido en Python)  
+- Pillow (para manejo de imágenes)  
+- Sistema de archivos con permisos de escritura  
 
 ---
 
 # **Limitaciones Actuales**
--Almacenamiento en archivos planos <br>
--Sin encriptación de contraseñas <br>
--Sin respaldo automático de datos <br>
--Reportes básicos sin gráficas <br>
+- Almacenamiento en archivos planos.  
+- Sin encriptación de contraseñas.  
+- Sin respaldo automático de datos.  
+- Reportes básicos sin gráficas.  
 
 ---
 
 # **Mejoras Futuras**
--Migración a SQLite <br>
--Encriptación de datos sensibles <br>
--Gráficos estadísticos <br>
--Exportación de reportes a PDF <br>
--Categorización de gastos <br>
--Presupuestos por categoría <br>
+- Migración a SQLite.  
+- Encriptación de datos sensibles.  
+- Gráficos estadísticos.  
+- Exportación de reportes a PDF.  
+- Categorización de gastos.  
+- Presupuestos por categoría.  
 
 ---
 
 # **Justificación**
 
--Impacto Social: Empodera a los usuarios con control financiero claro y accesible. <br>
--Tecnología: Uso de Python/Tkinter para rápida implementación y bajo costo. <br>
--Escalabilidad: Futura integración con bases de datos (SQLite) y análisis avanzado. <br>
+- **Impacto Social:** Empodera a los usuarios con control financiero claro y accesible.  
+- **Tecnología:** Uso de Python/Tkinter para rápida implementación y bajo costo.  
+- **Escalabilidad:** Futura integración con bases de datos (SQLite) y análisis avanzado.  
 
 ---
