@@ -1093,45 +1093,6 @@ class VentanaPrincipal(VentanaBase):
         # Separación visual
         tk.Frame(content_frame, height=15, bg="white").pack(fill="x")
         
-        # Configuración de tema
-        theme_frame = tk.Frame(content_frame, bg="white", relief="groove", bd=1, padx=15, pady=15)
-        theme_frame.pack(fill="x", pady=10)
-        
-        # Frame para el título de tema con líneas decorativas
-        titulo_tema_frame = tk.Frame(theme_frame, bg="white")
-        titulo_tema_frame.pack(fill="x", pady=(0, 15))
-        
-        tk.Label(titulo_tema_frame, text="Tema de la aplicación:",
-                font=FUENTE_SUBTITULOS, fg=COLOR_PRIMARIO, bg="white").pack(anchor="w")
-        tk.Frame(titulo_tema_frame, height=1, bg=COLOR_SECUNDARIO).pack(fill="x", pady=(5, 0))
-        
-        # Frame para los botones de temas
-        themes_frame = tk.Frame(theme_frame, bg="white")
-        themes_frame.pack(fill="x", pady=10)
-        
-        # Texto explicativo
-        tk.Label(themes_frame, 
-                text="Selecciona un tema para personalizar la apariencia de la aplicación:",
-                font=FUENTE_TEXTO,
-                fg=COLOR_TEXTO,
-                bg="white").pack(anchor="w", pady=(0, 10))
-        
-        # Crear frame centrado
-        centrar_frame = tk.Frame(themes_frame, bg="white")
-        centrar_frame.pack(pady=5, fill="x")
-        
-        themes = [
-            ("Claro", COLOR_FONDO, COLOR_TEXTO),
-            ("Oscuro", "#2c3e50", COLOR_TEXTO_CLARO)
-        ]
-        
-        for theme in themes:
-            btn = tk.Button(centrar_frame, text=theme[0],
-                          command=lambda bg=theme[1], fg=theme[2]: self.cambiar_tema(bg, fg),
-                          bg=theme[1], fg=theme[2], font=FUENTE_BOTONES,
-                          width=12, relief="raised", bd=2, padx=5, pady=5)
-            btn.pack(side="left", padx=10, anchor="w")
-        
         # Configuración de notificaciones
         notif_frame = tk.Frame(content_frame, bg="white", relief="groove", bd=1, padx=15, pady=15)
         notif_frame.pack(fill="x", pady=15)
@@ -1203,21 +1164,6 @@ class VentanaPrincipal(VentanaBase):
         
         self.secciones["config"] = frame
 
-    def cambiar_tema(self, bg_color, fg_color):
-        """Cambia el tema de la aplicación"""
-        global COLOR_FONDO, COLOR_TEXTO
-        COLOR_FONDO = bg_color
-        COLOR_TEXTO = fg_color
-        
-        # Actualizar colores en todas las secciones
-        for seccion in self.secciones.values():
-            seccion.config(bg=COLOR_FONDO)
-            for widget in seccion.winfo_children():
-                if isinstance(widget, tk.Frame):
-                    widget.config(bg=COLOR_FONDO)
-        
-        messagebox.showinfo("Tema cambiado", "Reinicia la aplicación para aplicar los cambios completamente")
-
     def guardar_configuracion(self):
         """Guarda la configuración del usuario"""
         # Mostrar efecto visual en el botón de guardar
@@ -1225,7 +1171,6 @@ class VentanaPrincipal(VentanaBase):
         
         # Guardar cada preferencia
         config_guardada = {
-            "tema": "Claro" if COLOR_FONDO == "#ecf0f1" else "Oscuro",
             "notificaciones": {
                 "generales": bool(self.notif_var.get()),
                 "recordatorios": bool(self.recordatorio_var.get()),

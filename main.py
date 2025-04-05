@@ -15,7 +15,6 @@ class MyEconomyApp(tk.Tk):
             self.iconbitmap(icon_path)
         except:
             pass
-
         self.container = tk.Frame(self)
         self.container.pack(fill="both", expand=True)
         self.container.grid_rowconfigure(0, weight=1)
