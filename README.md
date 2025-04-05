@@ -99,7 +99,7 @@ JU001,**** **** **** 1234,Bancolombia,5000000,25
 
 ---
 
-# **Mejoras Visuales que he hecho**
+# **Mejoras Visuales que se han echo**
 
 - **Mejor contraste:** Ahora el texto es negro sobre fondos claros para que se lea bien
 - **Tablas más claras:** Con colores alternados para no perderte entre tantos datos
@@ -141,7 +141,6 @@ JU001,**** **** **** 1234,Bancolombia,5000000,25
 - Ver un balance de tu situación con colores
 - Gráficos para entender en qué gastas más
 - Indicadores visuales de tu estado financiero
-- Comparativas con meses anteriores
 
 ---
 
@@ -166,14 +165,11 @@ JU001,**** **** **** 1234,Bancolombia,5000000,25
 **Te avisa de forma clara cuando:**  
 - Tus gastos superan el 70% de tus ingresos
 - Se acerca la fecha de pago de tus tarjetas
-- Vas a hacer algo importante (con mensajes de confirmación)
-- Necesitas tomar decisiones (con opciones claramente visibles)
-
 
 ---
 
 # **Cosas que faltan por mejorar**
-- Ahora guardo todo en archivos de texto (pronto lo pasaré a SQLite)
+- Ahora guardo todo en archivos de texto se agregaran bases de datos
 - No cifro las contraseñas todavía
 - No tiene backup automático
 - Los informes son bastante básicos
@@ -199,4 +195,3 @@ JU001,**** **** **** 1234,Bancolombia,5000000,25
 - **Ampliable:** Está hecho para que sea fácil añadir más cosas en el futuro
 
 ---
-
