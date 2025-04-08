@@ -13,6 +13,8 @@ COLOR_SECUNDARIO = "#3498db"
 COLOR_TERCIARIO = "#e74c3c"
 COLOR_CUARTO = "#2ecc71"
 COLOR_FONDO = "#ecf0f1"
+# No podemos usar transparencia directamente en Tkinter
+COLOR_FONDO_CLARO = "#f5f9fa"  # Un color muy claro en lugar de semitransparente
 COLOR_TEXTO = "#2c3e50"
 COLOR_TEXTO_CLARO = "#ecf0f1"
 FUENTE_TITULOS = ("Helvetica", 18, "bold")
@@ -20,14 +22,24 @@ FUENTE_SUBTITULOS = ("Helvetica", 14)
 FUENTE_TEXTO = ("Helvetica", 12)
 FUENTE_BOTONES = ("Helvetica", 12, "bold")
 
+class FrameTransparente(tk.Frame):
+    """Frame con apariencia ligera para permitir que se vea mejor el fondo"""
+    def __init__(self, parent, **kwargs):
+        bg_color = kwargs.pop('bg', COLOR_FONDO_CLARO)
+        super().__init__(parent, bg=bg_color, **kwargs)
+
 class VentanaPrincipal(VentanaBase):
     def __init__(self, parent, controller):
         super().__init__(parent, controller)
         self.controller = controller
         self.id_usuario = "JU001"  # Este ID debería venir del login
 
-        # Frame principal con tamaño fijo
-        self.main_container = tk.Frame(self, bg=COLOR_FONDO)
+        # Asegurarse de que la imagen de fondo sea visible
+        if hasattr(self, 'background_label'):
+            self.background_label.lower()
+
+        # Frame principal con fondo transparente
+        self.main_container = FrameTransparente(self)
         self.main_container.pack(fill="both", expand=True)
         self.main_container.pack_propagate(False)
 
@@ -36,7 +48,7 @@ class VentanaPrincipal(VentanaBase):
         self.menu.pack(side="left", fill="y")
 
         # Área de contenido principal
-        self.content_area = tk.Frame(self.main_container, bg=COLOR_FONDO)
+        self.content_area = FrameTransparente(self.main_container)
         self.content_area.pack(side="right", fill="both", expand=True)
         self.content_area.pack_propagate(False)
 
@@ -53,6 +65,10 @@ class VentanaPrincipal(VentanaBase):
 
         # Mostrar sección inicial
         self.mostrar_seccion("bienvenida")
+        
+        # Bajar el fondo al final para asegurar que esté detrás de todo
+        if hasattr(self, 'background_label'):
+            self.background_label.lower()
 
     def mostrar_seccion(self, nombre_seccion):
         """Muestra la sección solicitada y oculta las demás"""
@@ -71,10 +87,10 @@ class VentanaPrincipal(VentanaBase):
 
     def crear_seccion_bienvenida(self):
         """Sección de bienvenida con resumen inicial"""
-        frame = tk.Frame(self.content_area, bg=COLOR_FONDO)
+        frame = FrameTransparente(self.content_area)
         
         # Contenedor principal del contenido
-        main_content = tk.Frame(frame, bg=COLOR_FONDO)
+        main_content = FrameTransparente(frame)
         main_content.pack(fill="both", expand=True, padx=20, pady=20)
         
         # Frame de bienvenida con mejor estilo
@@ -117,7 +133,7 @@ class VentanaPrincipal(VentanaBase):
         self.actualizar_tarjetas_bienvenida()
         
         # Pie de página
-        footer_frame = tk.Frame(main_content, bg=COLOR_FONDO, padx=20, pady=10)
+        footer_frame = FrameTransparente(main_content)
         footer_frame.pack(fill="x", side="bottom")
         
         # Información de última actualización
@@ -125,8 +141,7 @@ class VentanaPrincipal(VentanaBase):
         tk.Label(footer_frame, 
                 text=f"Última actualización: {current_time}",
                 font=("Helvetica", 9),
-                fg="#7f8c8d",
-                bg=COLOR_FONDO).pack(side="right")
+                fg="#7f8c8d").pack(side="right")
         
         self.secciones["bienvenida"] = frame
 
